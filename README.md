@@ -7,44 +7,56 @@ We fitted the measured disk reflectance spectrum with models of reflectance spec
 
 If you find a bug or want to suggest improvements, please [create a ticket](https://github.com/ChenXie-astro/DDRM/issues).
 
+
 Requirements
 ------------
   - numpy
   - scipy
   - matplotlib
-  - corner
   - scipy
   - astropy
   - [emcee](https://emcee.readthedocs.io/en/stable/)
   - [miepython](https://miepython.readthedocs.io/en/latest/)
   - [mpmath](https://mpmath.org)
+  - [corner](https://corner.readthedocs.io/en/latest/)
+
 
 Optical constants
 --------
-It is possible to use custom optical constants following the same data sturctions as in [this folder]()
+It is possible to use custom optical constant files following the same data structure (wavelength, n, k) as in [the optical_constants folder](https://github.com/ChenXie-astro/DDRM/optical_constants) 
+
+There are optical constant files for H2O, FeS, Olivine (MgFeSiO4), amorphous carbon, pyroxene (MgSiO3, Mg0.7Fe0.3SiO3, Mg0.4Fe0.6SiO3), and SiC.
+Relevant references are listed below:
+Water ice: [Mastrapa et al., 2009](https://ui.adsabs.harvard.edu/abs/2009ApJ...701.1347M/abstract)
+FeS: [Henning & Stognienko 1996](https://ui.adsabs.harvard.edu/abs/1996A&A...311..291H)
+Olivine: [Dorschner et al., 1995](https://ui.adsabs.harvard.edu/abs/1995A&A...300..503D)
+Amporphous carbon: [Preibisch 1993](https://ui.adsabs.harvard.edu/abs/1993A&A...279..577P)
+Pyroxene: [Dorschner et al., 1995](https://ui.adsabs.harvard.edu/abs/1995A&A...300..503D)
+SiC: [Laor & Draine 1993](https://ui.adsabs.harvard.edu/abs/1993ApJ...402..441L)
+
 
 Examples
 --------
-Model parameters and adopted dust componennts in the dust model can be modified in each python script. 
+Model parameters and adopted dust components in the dust model can be modified in each Python script. 
 
-To fit the spectrum with single dust population using curve_fit
+To fit the spectrum with a single dust population using curve_fit
 ```
 % python spec_fitting_curvefit_single_population.py
 ```
-To fit the spectrum with two dust population using curve_fit
+To fit the spectrum with two dust populations using curve_fit
 ```
 % python spec_fitting_curvefit_two_population.py
 ```
-To fit the spectrum with two dust population using mcmc
+To fit the spectrum with two dust populations using mcmc
 ```
 % python spec_fitting_mcmc_single_population.py
 ```
-To fit the spectrum with two dust population using mcmc
+To fit the spectrum with two dust populations using mcmc
 ```
 % python spec_fitting_mcmc_two_population.py
 ```
 
-It will run DDRM, create a best-fit model (curve_fit/mcmc), and posterior distributions of dust parameters (mcmc).
+It will run DDRM, create a best-fit model, and posterior distributions of dust parameters (using mcmc).
 
 
 Credits
