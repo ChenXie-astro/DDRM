@@ -60,7 +60,7 @@ To fit the spectrum with two dust populations using mcmc
 ```
 
 It will run DDRM, create a best-fit model, and output posterior distributions of dust parameters (using mcmc).
-
+Note: depending on sampling and spectral coverage, it may take ~1 hour to run the curve_fit pipeline and >8 hours to run the mcmc pipeline on the personal laptop.
 
 Credits
 -------
