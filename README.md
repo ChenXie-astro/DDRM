@@ -2,9 +2,11 @@
 
 Information
 -----------
-Debris Disk Reflectance Modeling (DDRM) code for fitting disk reflectance spectrum measured by [NIRSpec IFU](https://jwst-docs.stsci.edu/jwst-near-infrared-spectrograph#gsc.tab=0). DDRM can also be used for fitting disk reflectance spectra measured by other instruments.  
+Debris Disk Reflectance Modeling (DDRM) code for fitting disk reflectance spectrum measured by [JWST/NIRSpec IFU](https://jwst-docs.stsci.edu/jwst-near-infrared-spectrograph#gsc.tab=0). DDRM can also be used for fitting disk reflectance spectra measured by other instruments.  
 
-DDRM will create a model reflectance and fit the measured disk reflectance spectrum using scipy.optimize.curve_fit and/or emcee. Curve_fit can provide a good fit and use it as initial input in the MCMC analysis (optional).  
+DDRM will create a model reflectance and fit the measured disk reflectance spectrum using scipy.optimize.curve_fit and/or emcee. Curve_fit can provide a good fit and use it as initial input in the MCMC analysis (optional). 
+
+The disk reflectance spectrum shows the scattering efficiency of dust particles in the disk. In DDRM, different dust species were mixed to form an effective medium following the Bruggeman rule. Mie theory was used to calculate the scattering efficiency of a given medium.
 
 If you find a bug or want to suggest improvements, please [create a ticket](https://github.com/ChenXie-astro/DDRM/issues).
 
