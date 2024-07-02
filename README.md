@@ -6,7 +6,7 @@ Debris Disk Reflectance Modeling (DDRM) code for fitting disk reflectance spectr
 
 DDRM will create a model reflectance and fit the measured disk reflectance spectrum using scipy.optimize.curve_fit and/or emcee. Curve_fit can provide a good fit and use it as initial input in the MCMC analysis (optional). 
 
-The disk reflectance spectrum shows the scattering efficiency of dust particles in the disk. In DDRM, different dust species were mixed to form an effective medium following the Bruggeman rule. Mie theory was used to calculate the scattering efficiency of a given medium.
+The disk reflectance spectrum shows the scattering efficiency of dust particles in the disk. In DDRM, different dust species were mixed to form an effective medium following the Bruggeman rule. Mie theory was then used to calculate the scattering efficiency of a given medium.
 
 If you find a bug or want to suggest improvements, please [create a ticket](https://github.com/ChenXie-astro/DDRM/issues).
 
@@ -60,7 +60,7 @@ To fit the spectrum with two dust populations using mcmc
 ```
 
 It will run DDRM, create a best-fit model, and output posterior distributions of dust parameters (using mcmc).
-Note: depending on sampling, spectral coverage, and initial inputs, it may take >1 hour to run the curve_fit pipeline and >8 hours to run the mcmc pipeline on a personal laptop.
+Note: depending on sampling, spectral coverage, and initial input, it may take >1 hour to run the curve_fit pipeline and >8 hours to run the mcmc pipeline on a personal laptop.
 
 Credits
 -------
