@@ -27,12 +27,12 @@ It is possible to use custom optical constant files following the same data stru
 
 There are optical constant files for H2O, FeS, Olivine (MgFeSiO4), amorphous carbon, pyroxene (MgSiO3, Mg0.7Fe0.3SiO3, Mg0.4Fe0.6SiO3), and SiC.
 Relevant references are listed below:
-Water ice: [Mastrapa et al., 2009](https://ui.adsabs.harvard.edu/abs/2009ApJ...701.1347M/abstract)
-FeS: [Henning & Stognienko 1996](https://ui.adsabs.harvard.edu/abs/1996A&A...311..291H)
-Olivine: [Dorschner et al., 1995](https://ui.adsabs.harvard.edu/abs/1995A&A...300..503D)
-Amporphous carbon: [Preibisch 1993](https://ui.adsabs.harvard.edu/abs/1993A&A...279..577P)
-Pyroxene: [Dorschner et al., 1995](https://ui.adsabs.harvard.edu/abs/1995A&A...300..503D)
-SiC: [Laor & Draine 1993](https://ui.adsabs.harvard.edu/abs/1993ApJ...402..441L)
+Water ice: [Mastrapa et al., 2009](https://ui.adsabs.harvard.edu/abs/2009ApJ...701.1347M/abstract)\
+FeS: [Henning & Stognienko 1996](https://ui.adsabs.harvard.edu/abs/1996A&A...311..291H)\
+Olivine: [Dorschner et al., 1995](https://ui.adsabs.harvard.edu/abs/1995A&A...300..503D)\
+Amporphous carbon: [Preibisch 1993](https://ui.adsabs.harvard.edu/abs/1993A&A...279..577P)\
+Pyroxene: [Dorschner et al., 1995](https://ui.adsabs.harvard.edu/abs/1995A&A...300..503D)\
+SiC: [Laor & Draine 1993](https://ui.adsabs.harvard.edu/abs/1993ApJ...402..441L)\
 
 
 Examples
@@ -56,7 +56,7 @@ To fit the spectrum with two dust populations using mcmc
 % python spec_fitting_mcmc_two_population.py
 ```
 
-It will run DDRM, create a best-fit model, and posterior distributions of dust parameters (using mcmc).
+It will run DDRM, create a best-fit model, and output posterior distributions of dust parameters (using mcmc).
 
 
 Credits
