@@ -12,20 +12,6 @@ import emcee
 from multiprocessing import Pool, cpu_count
 from utils import plot_spectrum_errorbar, hgg_phase_function, inter_n_i, output_cornor_mcmc_result
 
-import numpy
-print('numpy', numpy.__version__)
-import astropy
-print('astropy', astropy.__version__)
-import scipy
-print('scipy', scipy.__version__)
-print('miepython', miepython.__version__)
-import mpmath
-print('mpmath',mpmath.__version__)
-print(emcee.__version__)
-import corner
-print(corner.__version__)
-import matplotlib
-print(matplotlib.__version__)
 
 # %% FUNCTIONS
 
