@@ -16,7 +16,7 @@ Requirements
   - numpy
   - scipy
   - matplotlib
-  - astropy
+  - [astropy](https://www.astropy.org)
   - [emcee](https://emcee.readthedocs.io/en/stable/)
   - [miepython](https://miepython.readthedocs.io/en/latest/)
   - [mpmath](https://mpmath.org)
