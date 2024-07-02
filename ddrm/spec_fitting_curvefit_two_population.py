@@ -9,7 +9,7 @@ from scipy.interpolate import interp1d
 import miepython
 from scipy.optimize import curve_fit
 from mpmath import findroot
-from utils import plot_spectrum_errorbar, hgg_phase_function, inter_n_i, 
+from utils import plot_spectrum_errorbar, hgg_phase_function, inter_n_i
 
 # %% FUNCTIONS
 
@@ -414,7 +414,7 @@ res, header = fits.getdata(disk_data_path + '/residual_single_frame_sub_RDI_HD18
 nz = res.shape[0]
 z_wave = np.arange(header['CRVAL3'], header['CRVAL3']+ (nz)*header['CDELT3'], header['CDELT3'], )  # NIRSpec wavelength coverage
 
-disk_spectrum = fits.getdata(disk_data_path + '/HD181327_IFU_align_corrected_disk_spectrum_inner.fits')[:,1:3]
+disk_spectrum = fits.getdata(disk_data_path + '/HD181327_IFU_align_corrected_disk_spectrum_mid.fits')[:,1:3]
 spec_region = 'mid'
 
 scaling_factor = 1/disk_spectrum[380, 0]  # normalized to NIRSpec IFU channel #380, which is 2.5 micron
@@ -438,7 +438,7 @@ wave_inter = np.linspace(z_wave[0], z_wave[-1], nz_iter, )
 n_parameters_pop1 = 4
 n_parameters_pop2 = 2   # if no zero, then using two dust population in the reflectance model
 
-ice_T_amp= 50   # water ice temperature
+ice_T_amp= 50   # water ice temperature in K
 ice_T= 50      # water ice temperature
 
 initial_guess = [complex(2, 1)] # most refractive indices range between 1 and 3
@@ -555,7 +555,7 @@ elif n_parameters_pop1 == 3 and n_parameters_pop2 ==2:
 
 elif n_parameters_pop1 == 4 and n_parameters_pop2 ==2:
 
-    x_all = [2.8, -4, 1.4, 388,  -4, 2.6, 500,     0.001, 0.001, 0.05, 0.9,      0.35, 0.05]  # close to the best-fit
+    x_all = [2.8, -4, 1.4, 388,  -4, 2.6, 500,     0.001, 0.001, 0.05, 0.9,      0.35, 0.05]  
     bounds = np.array([[0, -5, 0.02, 20,  -5, 0.01, 20,   0, 0, 0, 0,   0, 0],[10, -2, 20, 1000, -2, 20, 1000,  1, 1, 1, 1,   1, 1]])
 
     comp1_file = optical_constant_path + comp1_filename[0]

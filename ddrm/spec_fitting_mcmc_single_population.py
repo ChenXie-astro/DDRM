@@ -344,14 +344,14 @@ nz_iter = 300       # wavelength sampling
 num_integ = 500     # sampling in calculating the model reflectance at a given wavelength; 500 is sufficient
 wave_inter = np.linspace(z_wave[0], z_wave[-1], nz_iter, )
 n_parameters_pop1 = 4
-n_parameters_pop2 = 2   # if no zero, then using two dust population in the reflectance model
+n_parameters_pop2 = 0   # if no zero, then using two dust population in the reflectance model
 
-ice_T_amp= 50   # water ice temperature
+ice_T_amp= 50   # water ice temperature in K
 ice_T= 50      # water ice temperature
 
 # mcmc parameters
-step =  3000                      # how many steps are expected for MCMC to runx0
-trunc = 500                                        # A step number you'd like to truncate at (aim: get rid of the burrning stage)
+step =  1000                      # how many steps are expected for MCMC to runx0, try 1000 first
+trunc = 200                                        # A step number you'd like to truncate at (aim: get rid of the burrning stage)
 
 
 initial_guess = [complex(2, 1)] # most refractive indices range between 1 and 3
@@ -527,7 +527,7 @@ data = disk_spec[:,0]
 unc = disk_spec[:,1]
 
 
-savepath = root + "/mcmc_result/{0}_nzinter_{1}_f_lognum_{2}_T_{3}/".format(spec_region, nz_iter, num_integ, ice_T)
+savepath = root + "/example/mcmc_result/{0}_nzinter_{1}_f_lognum_{2}_T_{3}/".format(spec_region, nz_iter, num_integ, ice_T)
 if os.path.exists(savepath):
     filename = savepath+ "state_HD181327_dust_reflectance_Model_region_{0}_inter_{1}_lognum_{2}_T_{3}.h5".format(spec_region, nz_iter, num_integ, ice_T)
 else:
@@ -596,7 +596,7 @@ model_bestfit, mcmc_values, chi2_reduced, labels = output_best_fit_mcmc_result_o
 fits.writeto(savepath + 'HD181327_dust_model_best_fit_{0}.fits'.format(spec_region), model_bestfit, overwrite=True)
 fits.writeto(savepath + 'HD181327_mcmc_values_{0}.fits'.format(spec_region), mcmc_values, overwrite=True)
 
-output_cornor_mcmc_result(samples, mcmc_values, labels)
+output_cornor_mcmc_result(sampler, trunc, mcmc_values, labels, n_dim, savepath, spec_region)
 
 print('Reduced chi2 is: ', chi2_reduced)
 # # ########################

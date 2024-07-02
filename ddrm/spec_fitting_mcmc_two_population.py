@@ -12,6 +12,21 @@ import emcee
 from multiprocessing import Pool, cpu_count
 from utils import plot_spectrum_errorbar, hgg_phase_function, inter_n_i, output_cornor_mcmc_result
 
+import numpy
+print('numpy', numpy.__version__)
+import astropy
+print('astropy', astropy.__version__)
+import scipy
+print('scipy', scipy.__version__)
+print('miepython', miepython.__version__)
+import mpmath
+print('mpmath',mpmath.__version__)
+print(emcee.__version__)
+import corner
+print(corner.__version__)
+import matplotlib
+print(matplotlib.__version__)
+
 # %% FUNCTIONS
 
 def chi2(data, data_unc, model, lnlike = True):
@@ -387,7 +402,7 @@ z_wave = np.arange(header['CRVAL3'], header['CRVAL3']+ (nz)*header['CDELT3'], he
 
 disk_spectrum = fits.getdata(disk_data_path + '/HD181327_IFU_align_corrected_disk_spectrum_mid.fits')[:,1:3]
 
-spec_region = 'inner'
+spec_region = 'mid'
 
 scaling_factor = 1/disk_spectrum[380, 0]     # normalized to NIRSpec IFU channel #380, which is 2.5 micron
 disk_spec = disk_spectrum*scaling_factor
@@ -410,12 +425,12 @@ wave_inter = np.linspace(z_wave[0], z_wave[-1], nz_iter, )
 n_parameters_pop1 = 4
 n_parameters_pop2 = 2   # if no zero, then using two dust population in the reflectance model
 
-ice_T_amp= 50   # water ice temperature
+ice_T_amp= 50   # water ice temperature in K
 ice_T= 50      # water ice temperature
 
 # mcmc parameters
-step =  10                      # how many steps are expected for MCMC to runx0
-trunc = 200                                        # A step number you'd like to truncate at (aim: get rid of the burrning stage)
+step =  1000                      # how many steps are expected for MCMC to runx0, try 1000 first
+trunc = 200                                      # A step number you'd like to truncate at (aim: get rid of the burrning stage)
 
 
 initial_guess = [complex(2, 1)] # most refractive indices range between 1 and 3
@@ -645,15 +660,14 @@ elif n_parameters_pop1 == 6 and n_parameters_pop2 ==2:
 #################################################################################
 
 n_dim = len(x_all)    # number of variables
-n_walkers = int(4*n_dim)              # an even number (>= 2n_dim)
-# n_walkers = int(10*n_dim)              # an even number (>= 2n_dim)
+n_walkers = int(10*n_dim)              # an even number (>= 2n_dim)
 
 x = z_wave
 data = disk_spec[:,0]
 unc = disk_spec[:,1]
 
 
-savepath = root + "/mcmc_result/{0}_nzinter_{1}_f_lognum_{2}_T_{3}/".format(spec_region, nz_iter, num_integ, ice_T)
+savepath = root + "/example/mcmc_result/{0}_nzinter_{1}_f_lognum_{2}_T_{3}/".format(spec_region, nz_iter, num_integ, ice_T)
 if os.path.exists(savepath):
     filename = savepath+ "state_HD181327_dust_reflectance_Model_region_{0}_inter_{1}_lognum_{2}_T_{3}.h5".format(spec_region, nz_iter, num_integ, ice_T)
 else:
@@ -723,7 +737,7 @@ model_bestfit, mcmc_values, chi2_reduced, labels = output_best_fit_mcmc_result_t
 fits.writeto(savepath + 'HD181327_dust_model_best_fit_{0}.fits'.format(spec_region), model_bestfit, overwrite=True)
 fits.writeto(savepath + 'HD181327_mcmc_values_{0}.fits'.format(spec_region), mcmc_values, overwrite=True)
 
-output_cornor_mcmc_result(samples, mcmc_values, labels)
+output_cornor_mcmc_result(sampler, trunc, mcmc_values, labels, n_dim, savepath, spec_region)
 
 print('Reduced chi2 is: ', chi2_reduced)
 # # ########################

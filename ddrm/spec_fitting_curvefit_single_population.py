@@ -337,7 +337,7 @@ wave_inter = np.linspace(z_wave[0], z_wave[-1], nz_iter, )
 n_parameters_pop1 = 4
 n_parameters_pop2 = 0
 
-ice_T_amp= 50   # water ice temperature
+ice_T_amp= 50   # water ice temperature in K
 ice_T= 50      # water ice temperature
 
 initial_guess = [complex(2, 1)] # most refractive indices range between 1 and 3

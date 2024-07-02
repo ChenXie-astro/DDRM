@@ -139,8 +139,9 @@ def inter_n_i(input_n_file, wave_inter ,):
 #         ftxt.write('%s\n' % write_neff)
 
 
-def output_cornor_mcmc_result(samples, mcmc_values, labels, n_dim, savepath, spec_region):
+def output_cornor_mcmc_result(sampler, trunc, mcmc_values, labels, n_dim, savepath, spec_region):
     plt.figure(dpi=300)
+    samples = sampler.chain[:, trunc:, :].reshape((-1, n_dim))
     fig = corner.corner(samples, labels=labels, quantiles =[.16, .50, .84])         # corner plots with the quantiles  (-1sigma, median, +1sigma)
     axes = np.array(fig.axes).reshape((n_dim, n_dim))
     for yi in range(n_dim):
@@ -157,7 +158,7 @@ def output_cornor_mcmc_result(samples, mcmc_values, labels, n_dim, savepath, spe
     plt.figure(dpi=300)
     fig, axes = plt.subplots(n_dim, figsize=(7, 18), sharex=True)
 
-    # samples = sampler.get_chain()
+    samples = sampler.get_chain()
     # labels = ["m", "b", "log(f)"]
     labels.append('loglikelihood')
     for i in range(n_dim):

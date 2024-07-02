@@ -16,13 +16,13 @@ Requirements
   - numpy
   - scipy
   - matplotlib
-  - scipy
   - astropy
   - [emcee](https://emcee.readthedocs.io/en/stable/)
   - [miepython](https://miepython.readthedocs.io/en/latest/)
   - [mpmath](https://mpmath.org)
   - [corner](https://corner.readthedocs.io/en/latest/)
 
+Tested: Python 3.7.7, numpy 1.21.6, scipy 1.7.3, matplotlib 3.3.0, astropy 3.2.3, emcee 3.0rc1, miepython 2.5.3, mpmath 1.1.0, corner 2.1.0.
 
 Optical constants
 --------
