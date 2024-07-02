@@ -417,7 +417,7 @@ z_wave = np.arange(header['CRVAL3'], header['CRVAL3']+ (nz)*header['CDELT3'], he
 disk_spectrum = fits.getdata(disk_data_path + '/HD181327_IFU_align_corrected_disk_spectrum_inner.fits')[:,1:3]
 spec_region = 'mid'
 
-scaling_factor = 1/disk_spectrum[380, 0]  # normalized to NIRSpec IFU channel #380, which is 2.5 
+scaling_factor = 1/disk_spectrum[380, 0]  # normalized to NIRSpec IFU channel #380, which is 2.5 micron
 disk_spec = disk_spectrum*scaling_factor
 
 disk_spec = disk_spec[115:-21]  #  NIRSpec IFU 1.1-7.2 microns.
