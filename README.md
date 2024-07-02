@@ -26,7 +26,7 @@ Requirements
 
 Optical constants
 --------
-It is possible to use custom optical constant files following the same data structure (wavelength, n, k) as in [the optical_constants folder](https://github.com/ChenXie-astro/DDRM/optical_constants) 
+It is easy to add custom optical constant files simply following the same data structure (wavelength, n, k) as in [the optical_constants folder](https://github.com/ChenXie-astro/DDRM/optical_constants).
 
 There are optical constant files for H2O, FeS, Olivine (MgFeSiO4), amorphous carbon, pyroxene (MgSiO3, Mg0.7Fe0.3SiO3, Mg0.4Fe0.6SiO3), and SiC.\
 Relevant references are listed below:\
