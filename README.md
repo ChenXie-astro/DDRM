@@ -64,4 +64,49 @@ Note: depending on sampling, spectral coverage, and initial input, it may take >
 
 Credits
 -------
+If you use DDRM in your research, please cite
 Xie et al. **in prep.**
+
+In addition:
+If you use mpmath.findroot in solving the Bruggeman rule, please also cite
+```
+@manual{mpmath,
+  key     = {mpmath},
+  author  = {The mpmath development team},
+  title   = {mpmath: a {P}ython library for arbitrary-precision floating-point arithmetic (version 1.3.0)},
+  note    = {{\tt http://mpmath.org/}},
+  year    = {2023},
+}
+```
+
+If you use miepython to calculate the scattering efficiency, please also cite 
+```
+@software{prahl_2024_11135148,
+  author       = {Prahl, Scott},
+  title        = {{miepython: Pure python calculation of Mie 
+                   scattering}},
+  month        = may,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {2.5.4},
+  doi          = {10.5281/zenodo.11135148},
+  url          = {https://doi.org/10.5281/zenodo.11135148}
+}
+```
+
+If you use corner to make the corner plot, please also cite
+```
+  @article{corner,
+      doi = {10.21105/joss.00024},
+      url = {https://doi.org/10.21105/joss.00024},
+      year  = {2016},
+      month = {jun},
+      publisher = {The Open Journal},
+      volume = {1},
+      number = {2},
+      pages = {24},
+      author = {Daniel Foreman-Mackey},
+      title = {corner.py: Scatterplot matrices in Python},
+      journal = {The Journal of Open Source Software}
+    }
+```
