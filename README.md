@@ -65,9 +65,11 @@ Note: depending on sampling, spectral coverage, and initial input, it may take >
 Credits
 -------
 If you use DDRM in your research, please cite
+
 Xie et al. **in prep.**
 
 In addition:
+
 If you use mpmath.findroot in solving the Bruggeman rule, please also cite
 ```
 @manual{mpmath,
