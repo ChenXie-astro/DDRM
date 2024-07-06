@@ -96,6 +96,27 @@ If you use miepython to calculate the scattering efficiency, please also cite
 }
 ```
 
+If you use emcee in performing the MCMC analysis, please also cite
+```
+@ARTICLE{2013PASP..125..306F,
+       author = {{Foreman-Mackey}, Daniel and {Hogg}, David W. and {Lang}, Dustin and {Goodman}, Jonathan},
+        title = "{emcee: The MCMC Hammer}",
+      journal = {\pasp},
+     keywords = {Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Computational Physics, Statistics - Computation},
+         year = 2013,
+        month = mar,
+       volume = {125},
+       number = {925},
+        pages = {306},
+          doi = {10.1086/670067},
+archivePrefix = {arXiv},
+       eprint = {1202.3665},
+ primaryClass = {astro-ph.IM},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2013PASP..125..306F},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
+
 If you use corner to make the corner plot, please also cite
 ```
   @article{corner,
