@@ -66,11 +66,31 @@ Credits
 -------
 If you use DDRM in your research, please cite
 
-Xie et al. **in prep.**
+[Xie et al. 2025](https://www.nature.com/articles/s41586-025-08920-4)
+
+```
+@article{Xie2025,
+	author = {Xie, Chen and Chen, Christine H. and Lisse, Carey M. and Hines, Dean C. and Beck, Tracy and Betti, Sarah K. and Pinilla-Alonso, Noem{\'\i} and Ingebretsen, Carl and Worthen, Kadin and G{\'a}sp{\'a}r, Andr{\'a}s and Wolff, Schuyler G. and Bolin, Bryce T. and Pueyo, Laurent and Perrin, Marshall D. and Stansberry, John A. and Leisenring, Jarron M.},
+	date = {2025/05/01},
+	date-added = {2025-05-14 11:29:27 -0400},
+	date-modified = {2025-05-14 11:29:27 -0400},
+	doi = {10.1038/s41586-025-08920-4},
+	id = {Xie2025},
+	isbn = {1476-4687},
+	journal = {Nature},
+	number = {8063},
+	pages = {608--611},
+	title = {Water ice in the debris disk around HD 181327},
+	url = {https://doi.org/10.1038/s41586-025-08920-4},
+	volume = {641},
+	year = {2025},
+	bdsk-url-1 = {https://doi.org/10.1038/s41586-025-08920-4}}
+}
+```
 
 In addition:
 
-If you use mpmath.findroot in solving the Bruggeman rule, please also cite
+If you use **mpmath.findroot** in solving the Bruggeman rule, please also cite
 ```
 @manual{mpmath,
   key     = {mpmath},
@@ -81,7 +101,7 @@ If you use mpmath.findroot in solving the Bruggeman rule, please also cite
 }
 ```
 
-If you use miepython to calculate the scattering efficiency, please also cite 
+If you use **miepython** to calculate the scattering efficiency, please also cite 
 ```
 @software{prahl_2024_11135148,
   author       = {Prahl, Scott},
@@ -96,7 +116,7 @@ If you use miepython to calculate the scattering efficiency, please also cite
 }
 ```
 
-If you use emcee in performing the MCMC analysis, please also cite
+If you use **emcee** in performing the MCMC analysis, please also cite
 ```
 @ARTICLE{2013PASP..125..306F,
        author = {{Foreman-Mackey}, Daniel and {Hogg}, David W. and {Lang}, Dustin and {Goodman}, Jonathan},
@@ -117,7 +137,7 @@ archivePrefix = {arXiv},
 }
 ```
 
-If you use corner to make the corner plot, please also cite
+If you use **corner** to make the corner plot, please also cite
 ```
   @article{corner,
       doi = {10.21105/joss.00024},
